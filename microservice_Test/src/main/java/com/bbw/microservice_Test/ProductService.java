@@ -5,10 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-interface ProductRepository {
-    List<Product> findAll();
-}
-
 @Service
 public class ProductService {
     @Autowired
@@ -19,8 +15,6 @@ public class ProductService {
     }
 
     public void saveProduct(Product product) {
-        // save product to database
+        productRepository.save(product);
     }
-
-    
 }
